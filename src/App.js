@@ -1,16 +1,22 @@
+import './global.css'
 import Card from './Card'
-import data from './rickandmortyapi.json'
+import { results } from './rickandmortyapi.json' // { results } ist destructuring assignment von data aus der api; würden wir hier data schreiben (ohne geschweifte Klammern) müssten wir unten data.results.map(...) schreiben
 
 function App() {
-
   return (
     <div className="App">
-      { data.results.map(item => <Card 
-        name={item.name}
-        />)}
-      
+      {results.map(({ name, species, gender, status, image, id }) => (
+        <Card
+          key={id}
+          name={name}
+          species={species}
+          gender={gender}
+          status={status}
+          image={image}
+        />
+      ))}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
