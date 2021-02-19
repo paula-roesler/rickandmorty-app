@@ -1,3 +1,12 @@
 .Navigation {
   background-color: lightgreen;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 10px;
+  color: lightcyan;
+}
+
+.Navigation__button {
+  fill: #444;
 }
