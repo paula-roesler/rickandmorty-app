@@ -1,0 +1,11 @@
+.Header {
+  background: grey;
+  color: #222;
+}
+
+.Header__title {
+  font-family: monospace;
+  text-align: center;
+  font-size: 2em;
+  line-height: 0.5em;
+}
