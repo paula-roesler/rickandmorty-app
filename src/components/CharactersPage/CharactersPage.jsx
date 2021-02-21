@@ -24,6 +24,14 @@ export default function CharactersPage() {
       })
   }
 
+  function show() {
+    CharactersPage.hidden = false
+  }
+
+  function hide() {
+    CharactersPage.hidden = true
+  }
+
   return (
     <>
       {characters.map(
