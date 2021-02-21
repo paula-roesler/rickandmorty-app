@@ -1,21 +1,45 @@
 import './Navigation.css'
-import { ReactComponent as Home } from '@fortawesome/fontawesome-free/svgs/solid/brain.svg'
+import { ReactComponent as About } from '@fortawesome/fontawesome-free/svgs/solid/brain.svg'
 import { ReactComponent as Search } from '@fortawesome/fontawesome-free/svgs/solid/bullseye.svg'
-import { ReactComponent as Like } from '@fortawesome/fontawesome-free/svgs/solid/heart.svg'
-import { ReactComponent as Create } from '@fortawesome/fontawesome-free/svgs/solid/bolt.svg'
+import { ReactComponent as Liked } from '@fortawesome/fontawesome-free/svgs/solid/heart.svg'
+import { ReactComponent as Characters } from '@fortawesome/fontawesome-free/svgs/solid/bolt.svg'
 
-export default function Navigation({ onclick }) {
-  const home = <Home />
+export default function Navigation({ onNavigate }) {
+  const about = <About />
+  const characters = <Characters />
   const search = <Search />
-  const like = <Like />
-  const create = <Create />
+  const liked = <Liked />
 
   return (
     <nav className="Navigation">
-      <Home className="Navigation__button" onNavigate={onclick} />
-      <Search className="Navigation__button" onNavigate={onclick} />
-      <Like className="Navigation__button" onNavigate={onclick} />
-      <Create className="Navigation__button" onNavigate={onclick} />
+      <button
+        className="Navigation__button"
+        title="AboutPage"
+        onClick={() => onNavigate('AboutPage')}
+      >
+        {about}
+      </button>
+      <button
+        className="Navigation__button"
+        title="CharactersPage"
+        onClick={() => onNavigate('CharactersPage')}
+      >
+        {characters}
+      </button>
+      <button
+        className="Navigation__button"
+        title="SearchPage"
+        onClick={() => onNavigate('SearchPage')}
+      >
+        {search}
+      </button>
+      <button
+        className="Navigation__button"
+        title="LikedPage"
+        onClick={() => onNavigate('LikedPage')}
+      >
+        {liked}
+      </button>
     </nav>
   )
 }
