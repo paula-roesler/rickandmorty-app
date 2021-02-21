@@ -27,13 +27,18 @@ export default function Card({
         </button>
         <div className="Card__details" hidden={!isCardDetailsVisible}>
           <img src={image} alt="" className="Card__profilePic" />
-          <ul className="Card__detailsList">
-            <li>Species: {species === 'Human' ? '😎' : '👽'}</li>
-            <li>Gender: {gender}</li>
-            <li>Status: {status}</li>
-            <li>Origin: {origin}</li>
-            <li>Location: {location}</li>
-          </ul>
+          <dl className="Card__detailsList">
+            <dt>Species:</dt>
+            <dd>{species}</dd>
+            <dt>Gender:</dt>
+            <dd>{gender}</dd>
+            <dt>Status:</dt>
+            <dd>{status}</dd>
+            <dt>Origin:</dt>
+            <dd>{origin}</dd>
+            <dt>Location:</dt>
+            <dd>{location}</dd>
+          </dl>
         </div>
       </section>
     </>

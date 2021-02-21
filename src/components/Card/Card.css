@@ -1,6 +1,6 @@
 .Card {
   background-color: lightcoral;
-  box-shadow: 0px 5px 5px #aaa;
+  box-shadow: 0px 5px 5px var(--color-shadow);
   border-radius: 4px;
   width: 375px;
 }
@@ -12,6 +12,7 @@
   font-size: 1.8em;
   line-height: 1em;
   padding-left: 20px;
+  color: var(--color-dark);
 }
 
 .Card__detailsButton {
@@ -21,7 +22,7 @@
   font-size: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #222;
+  color: var(--color-dark);
   background-color: transparent;
 }
 
@@ -33,13 +34,25 @@
 .Card__detailsList {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  list-style: none;
-  padding-left: 0;
   font-size: 0.8em;
+  list-style: none;
+  margin: 0 0 10px;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.Card__detailsList dt {
+  padding-right: 7px;
+}
+
+.Card__detailsList dd {
+  margin-left: 0;
 }
 
 .Card__profilePic {
-  width: 130px;
+  width: 120px;
+  height: 120px;
   border-radius: 0 4px;
 }
 
