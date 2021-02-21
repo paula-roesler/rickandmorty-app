@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import '../../global.css'
 import Header from '../Header'
+import Grid from '../Grid'
 import AboutPage from '../AboutPage'
 import CharactersPage from '../CharactersPage'
 import LikedPage from '../LikedPage'
@@ -11,9 +12,8 @@ function App({ titel }) {
   const [currentPage, setCurrentPage] = useState('AboutPage')
 
   return (
-    <div className="App">
+    <Grid>
       <Header title="Rick & Morty" />
-      {/* muss Grid werden*/}
       <main>
         <AboutPage hidden={currentPage !== 'AboutPage'} titel="About" />
         <LikedPage hidden={currentPage !== 'LikedPage'} titel="Liked" />
@@ -23,7 +23,7 @@ function App({ titel }) {
         />
       </main>
       <Navigation onNavigate={setCurrentPage} />
-    </div>
+    </Grid>
   )
 }
 
