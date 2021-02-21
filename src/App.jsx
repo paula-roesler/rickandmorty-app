@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './global.css'
+import './styles/_variables.css'
 import Header from './components/Header'
 import Grid from './components/Grid'
 import AboutPage from './components/AboutPage'
