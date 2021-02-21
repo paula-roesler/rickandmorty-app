@@ -1,12 +1,11 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import '../../global.css'
-import Header from '../Header'
-import Grid from '../Grid'
-import AboutPage from '../AboutPage'
-import CharactersPage from '../CharactersPage'
-import LikedPage from '../LikedPage'
-import Navigation from '../Navigation'
+import { useState } from 'react'
+import './global.css'
+import Header from './components/Header'
+import Grid from './components/Grid'
+import AboutPage from './components/AboutPage'
+import CharactersPage from './components/CharactersPage'
+import LikedPage from './components/LikedPage'
+import Navigation from './components/Navigation'
 
 function App({ titel }) {
   const [currentPage, setCurrentPage] = useState('AboutPage')
@@ -14,7 +13,7 @@ function App({ titel }) {
   return (
     <Grid>
       <Header title="Rick & Morty" />
-      <main>
+      <main className="Gird__main">
         <AboutPage hidden={currentPage !== 'AboutPage'} titel="About" />
         <LikedPage hidden={currentPage !== 'LikedPage'} titel="Liked" />
         <CharactersPage

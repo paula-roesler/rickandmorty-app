@@ -9,7 +9,7 @@
   right: 0;
 }
 
-main {
+.Gird__main {
   display: grid;
   justify-items: center;
   gap: 30px;
