@@ -1,5 +1,5 @@
 import './Card.css'
-import { useState } from 'react' // { useState } ist eine Abkürzung für React.useState, siehe weiter unten
+import { useState } from 'react'
 
 export default function Card({
   name,
@@ -10,23 +10,24 @@ export default function Card({
   location,
   image,
 }) {
-  const [isCardDetailsVisible, setIsCardDetailsVisible] = useState(false) // siehe Kommentar oben Z 2
+  const [isCardDetailsVisible, setIsCardDetailsVisible] = useState(false)
 
   return (
     <>
       <section className="Card">
-        <div className="Card__header">
-          <h1 className="Card__title">{name}</h1>
-          <button
-            className="Card__detailsButton"
-            onClick={event => {
-              event.stopPropagation()
-              setIsCardDetailsVisible(!isCardDetailsVisible)
-            }}
-          >
-            {!isCardDetailsVisible ? 'Show details' : 'Hide details'}
-          </button>
-          <ul hidden={!isCardDetailsVisible} className="Card__details">
+        <h1 className="Card__title">{name}</h1>
+        <button
+          className="Card__detailsButton"
+          onClick={event => {
+            event.stopPropagation()
+            setIsCardDetailsVisible(!isCardDetailsVisible)
+          }}
+        >
+          {!isCardDetailsVisible ? 'Show details' : 'Hide details'}
+        </button>
+        <div className="Card__details" hidden={!isCardDetailsVisible}>
+          <img src={image} alt="" className="Card__profilePic" />
+          <ul className="Card__detailsList">
             <li>Species: {species === 'Human' ? '😎' : '👽'}</li>
             <li>Gender: {gender}</li>
             <li>Status: {status}</li>
@@ -34,7 +35,6 @@ export default function Card({
             <li>Location: {location}</li>
           </ul>
         </div>
-        <img src={image} alt="" className="Card__profilePic" />
       </section>
     </>
   )
