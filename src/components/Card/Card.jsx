@@ -13,7 +13,7 @@ export default function Card({
   image,
 }) {
   const heart = <Heart className="Card__detailsLikeButton" />
-  const heart_active = <Heart className="Card__detailsLikeButton--active" />
+  // const heart_active = <Heart className="Card__detailsLikeButton--active" />
   const details = <Details className="Card__detailsBtSymbol" />
   const details_active = (
     <Details className="Card__detailsBtSymbol Card__detailsBtSymbol--active" />

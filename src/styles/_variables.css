@@ -1,7 +1,8 @@
 :root {
-  --color-primary: tomato;
+  --color-primary: lightcoral;
   --color-white: #fcfcfc;
   --color-dark: #222;
+  --color-grey: grey;
   --color-shadow: #aaa;
-  --color-active: #666;
+  --color-active: lightgreen;
 }
