@@ -7,12 +7,16 @@
   bottom: 0;
   left: 0;
   right: 0;
+  max-width: 500px;
+  margin: 0 auto;
+  align-content: center;
+  justify-content: center;
 }
 
 .Gird__main {
   display: grid;
   justify-items: center;
-  gap: 30px;
+  gap: 20px;
   overflow-y: scroll;
-  padding-top: 20px;
+  padding: 20px;
 }

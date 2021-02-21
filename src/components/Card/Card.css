@@ -1,44 +1,83 @@
 .Card {
   background-color: lightcoral;
-  box-shadow: 0px 5px 5px #aaa;
+  box-shadow: 0px 5px 5px var(--color-shadow);
   border-radius: 4px;
-  width: 375px;
-}
-
-.Card__header {
-  padding: 5px 30px;
+  width: 100%;
+  position: relative;
 }
 
 .Card__title {
   font-family: monospace;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 2.5em;
+  letter-spacing: 0.05em;
+  font-size: 1.8em;
   line-height: 1em;
+  padding-left: 20px;
+  width: 90%;
+  color: var(--color-dark);
 }
 
 .Card__detailsButton {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 4px;
   border: none;
-  font-family: monospace;
-  font-size: 16px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #444;
+  background-color: transparent;
 }
 
-.Card__details {
+.Card__detailsBtSymbol {
+  fill: var(--color-dark);
+  width: 25px;
+  position: absolute;
+  right: 15px;
+  top: 60px;
+}
+
+.Card__detailsBtSymbol--active {
+  fill: var(--color-active);
+  right: 15px;
+  top: 60px;
+}
+
+.Card__detailsLikeButton {
+  fill: var(--color-dark);
+  width: 25px;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+}
+
+.Card__detailsLikeButton--active {
+  fill: var(--color-active);
+}
+
+.Card__detailsLikeButton .Card__details {
+  display: flex;
+  gap: 20px;
+}
+
+.Card__detailsList {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 0.8em;
   list-style: none;
+  margin: 0 0 10px;
   padding-left: 0;
-  font-size: 0.9em;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.Card__detailsList dt {
+  padding-right: 7px;
+}
+
+.Card__detailsList dd {
+  margin-left: 0;
 }
 
 .Card__profilePic {
-  width: 375px;
+  width: 120px;
+  height: 120px;
   border-radius: 0 4px;
+}
+
+[hidden] {
+  display: none !important;
 }
