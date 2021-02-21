@@ -1,6 +1,6 @@
 .Header {
-  background: grey;
-  color: #222;
+  background: var(--color-grey);
+  color: var(--color-dark);
 }
 
 .Header__title {

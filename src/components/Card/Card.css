@@ -1,5 +1,5 @@
 .Card {
-  background-color: lightcoral;
+  background-color: var(--color-primary);
   box-shadow: 0px 5px 5px var(--color-shadow);
   border-radius: 4px;
   width: 100%;
@@ -48,7 +48,7 @@
   fill: var(--color-active);
 }
 
-.Card__detailsLikeButton .Card__details {
+.Card__details {
   display: flex;
   gap: 20px;
 }

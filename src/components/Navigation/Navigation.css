@@ -1,10 +1,9 @@
 .Navigation {
-  background-color: lightgreen;
+  background-color: var(--color-grey);
   display: flex;
   justify-content: space-evenly;
   gap: 20px;
   padding: 10px;
-  color: lightcyan;
 }
 
 .Navigation__button {
@@ -12,6 +11,10 @@
   justify-content: space-evenly;
   gap: 20px;
   border: none;
-  fill: #444;
+  fill: var(--color-dark);
   background-color: transparent;
+}
+
+.Navigation__button--active {
+  fill: var(--color-active);
 }
