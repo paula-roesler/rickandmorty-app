@@ -10,7 +10,7 @@
   font-family: monospace;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: 1.8em;
+  font-size: 1.4em;
   line-height: 1em;
   padding-left: 20px;
   width: 90%;
@@ -24,24 +24,26 @@
 
 .Card__detailsBtSymbol {
   fill: var(--color-dark);
-  width: 25px;
+  width: 20px;
   position: absolute;
   right: 15px;
-  top: 60px;
+  top: 18px;
 }
 
 .Card__detailsBtSymbol--active {
   fill: var(--color-active);
+  width: 20px;
+  position: absolute;
   right: 15px;
-  top: 60px;
+  top: 18px;
 }
 
 .Card__detailsLikeButton {
   fill: var(--color-dark);
-  width: 25px;
+  width: 20px;
   position: absolute;
-  right: 15px;
-  top: 20px;
+  right: 55px;
+  top: 18px;
 }
 
 .Card__detailsLikeButton--active {

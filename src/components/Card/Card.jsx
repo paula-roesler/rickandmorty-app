@@ -13,10 +13,7 @@ export default function Card({
   likeMe,
   likeButton,
 }) {
-  const details = <Details className="Card__detailsBtSymbol" />
-  const details_active = (
-    <Details className="Card__detailsBtSymbol Card__detailsBtSymbol--active" />
-  )
+  const details = <Details />
 
   const [isCardDetailsVisible, setIsCardDetailsVisible] = useState(false)
 
@@ -24,15 +21,19 @@ export default function Card({
     <>
       <section className="Card">
         <h1 className="Card__title">{name}</h1>
-        <button
+        <span
           className="Card__detailsButton"
           onClick={event => {
             event.stopPropagation()
             setIsCardDetailsVisible(!isCardDetailsVisible)
           }}
         >
-          {!isCardDetailsVisible ? details : details_active}
-        </button>
+          {!isCardDetailsVisible ? (
+            <Details className="Card__detailsBtSymbol" />
+          ) : (
+            <Details className="Card__detailsBtSymbol--active" />
+          )}
+        </span>
         <span onClick={likeMe}>{likeButton}</span>
         <div className="Card__details" hidden={!isCardDetailsVisible}>
           <img src={image} alt="" className="Card__profilePic" />

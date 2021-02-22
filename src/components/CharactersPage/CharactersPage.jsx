@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
-import { ReactComponent as Heart } from '@fortawesome/fontawesome-free/svgs/solid/heart.svg'
-
 import Card from '../Card'
 import './CharactersPage.css'
+import { ReactComponent as Heart } from '@fortawesome/fontawesome-free/svgs/solid/heart.svg'
 
 export default function CharactersPage() {
   const heart = <Heart className="Card__detailsLikeButton" />
