@@ -1,7 +1,6 @@
 import './Card.css'
 import { useState } from 'react'
 import { ReactComponent as Details } from '@fortawesome/fontawesome-free/svgs/solid/bullseye.svg'
-import { ReactComponent as Heart } from '@fortawesome/fontawesome-free/svgs/solid/heart.svg'
 
 export default function Card({
   name,
@@ -11,9 +10,9 @@ export default function Card({
   origin,
   location,
   image,
+  likeMe,
+  likeButton,
 }) {
-  const heart = <Heart className="Card__detailsLikeButton" />
-  // const heart_active = <Heart className="Card__detailsLikeButton--active" />
   const details = <Details className="Card__detailsBtSymbol" />
   const details_active = (
     <Details className="Card__detailsBtSymbol Card__detailsBtSymbol--active" />
@@ -34,7 +33,7 @@ export default function Card({
         >
           {!isCardDetailsVisible ? details : details_active}
         </button>
-        <span>{heart}</span>
+        <span onClick={likeMe}>{likeButton}</span>
         <div className="Card__details" hidden={!isCardDetailsVisible}>
           <img src={image} alt="" className="Card__profilePic" />
           <dl className="Card__detailsList">

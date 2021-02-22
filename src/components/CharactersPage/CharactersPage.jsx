@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react'
+import { ReactComponent as Heart } from '@fortawesome/fontawesome-free/svgs/solid/heart.svg'
+
 import Card from '../Card'
 import './CharactersPage.css'
 
 export default function CharactersPage() {
+  const heart = <Heart className="Card__detailsLikeButton" />
+  const heart_active = <Heart className="Card__detailsLikeButton--active" />
+
   const [characters, setCharacters] = useState([])
+  const [likedCharacters, setLikedCharacters] = useState([])
 
   useEffect(() => {
     getAllCharacters()
@@ -20,6 +26,23 @@ export default function CharactersPage() {
       })
   }
 
+  function likeMe() {
+    // onClick={() => likeCharacter(character.id)}>
+    //              { likedCharacters.includes(character.id) ? '❤️' : '🤍' }
+  }
+
+  function likeCharacter(currentId) {
+    let newArray
+
+    if (likedCharacters.includes(currentId)) {
+      newArray = likedCharacters.filter(id => id !== currentId)
+    } else {
+      newArray = [...likedCharacters, currentId]
+    }
+
+    setLikedCharacters(newArray)
+  }
+
   return (
     <>
       {characters.map(
@@ -34,6 +57,13 @@ export default function CharactersPage() {
             location={location.name}
             buttonText="Show details"
             image={image}
+            likeButton={
+              likedCharacters.includes(characters.id) ? (
+                <Heart className="Card__detailsLikeButton--active" />
+              ) : (
+                <Heart className="Card__detailsLikeButton" />
+              )
+            }
           />
         )
       )}
